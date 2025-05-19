@@ -5,7 +5,6 @@ import ait.cohort55.forum.dto.PostAddDto;
 import ait.cohort55.forum.dto.PostDto;
 import ait.cohort55.forum.service.PostService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,12 +40,12 @@ public class PostController {
     }
 
     @PatchMapping("/forum/post/{postId}/like")
-    public Integer addLike(@PathVariable String postId, @RequestBody PostDto like) {
-        return postService.addLike(like);
+    public Integer addLike(@PathVariable String postId) {
+        return postService.addLike(postId);
     }
 
-    @PatchMapping("/forum/post/{postId}/comment/{commenter}")
-    public PostDto addComment(@PathVariable String postId, @PathVariable CommentDto commenter) {
+    @PatchMapping("/forum/post/{postId}/comment")
+    public PostDto addComment(@PathVariable String postId, @RequestBody CommentDto commenter) {
         return postService.addComment(postId, commenter);
     }
 

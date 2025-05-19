@@ -21,5 +21,5 @@ public class PostDto {
     private LocalDateTime dateCreated;
     private List<String> tags;
     private Integer likes;
-    private List<String> comments;
+    private List<CommentDto> comments;
 }

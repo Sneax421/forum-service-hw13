@@ -1,5 +1,6 @@
 package ait.cohort55.forum.model;
 
+import ait.cohort55.forum.dto.CommentDto;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
@@ -29,7 +30,7 @@ public class Post {
     @Setter
     private Integer likes = 0;
     @Setter
-    private List<String> comments = new ArrayList<>();
+    private List<Comment> comments = new ArrayList<>();
 
     public Post(String id, String title, String content, List<String> tags) {
         this.id = id;
@@ -42,7 +43,7 @@ public class Post {
         likes++;
     }
 
-    public void addComment(String comment) {
+    public void addComment(Comment comment) {
         comments.add(comment);
     }
 }

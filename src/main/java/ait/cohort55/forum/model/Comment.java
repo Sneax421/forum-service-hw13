@@ -1,17 +1,19 @@
-package ait.cohort55.forum.dto;
+package ait.cohort55.forum.model;
+
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-@Getter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CommentDto {
+public class Comment {
     private String user;
     private String message;
     private LocalDateTime dateCreated;
     private int likes;
 }
+

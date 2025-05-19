@@ -18,7 +18,7 @@ public interface PostService {
 
     PostDto updatePost(String id, PostAddDto postAddDto);
 
-    Integer addLike(PostDto addLike);
+    Integer addLike(String postId);
 
     PostDto addComment(String id, CommentDto comment);
 
