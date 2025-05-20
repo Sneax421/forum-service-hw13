@@ -167,7 +167,7 @@ public class PostServiceImpl implements PostService {
     @Override
     public List<PostDto> findPostsByTags(List<String> tags) {
         return StreamSupport.stream(postRepository.findAll().spliterator(), false)
-                .filter(t -> t.getTags().stream().anyMatch(tags::contains)) // поправил фильтр для тегов
+                .filter(t -> t.getTags().stream().anyMatch(tags::contains))
                 .map(t -> new PostDto(
                         t.getId(),
                         t.getTitle(),
